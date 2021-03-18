@@ -1,5 +1,9 @@
 from time import time
 
+'''Performance Decorator
+ Simple decorator created to measure the time taken by different functions
+'''
+
 def performance_monitor(fn):
 	
 	def wrapped_func(*args, **kwargs):
