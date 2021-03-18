@@ -1,6 +1,14 @@
 from translate import Translator
 import sys
 
+'''File Translator
+    Cmd arguments:
+    
+    First argument : language to translate
+    Second argument : Filepath to be translated
+    
+'''
+
 
 def beautify(fn):
     def wrapped_fn(*args, **kwargs):
