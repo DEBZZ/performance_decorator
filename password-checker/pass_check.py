@@ -31,12 +31,17 @@ def pwned_pwd_check(password):
     return check_resp(hash_str, tail)
 
 
+def read_file(filename):
+    with open(filename, "r+") as f:
+        return f.read().split(" ")
+
+
 if __name__ == "__main__":
-    password_list = sys.argv[1:]
+    password_list = read_file(sys.argv[1])
+    # password_list = sys.argv[1:]
     for password in password_list:
         count = pwned_pwd_check(password)
         if count != 0:
             print(f"{password} is not safe...Have been found in {count} sites")
         else:
             print(f"{password} is absolutely safe")
-
